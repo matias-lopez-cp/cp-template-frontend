@@ -1,0 +1,19 @@
+{
+  "extends": ["next/core-web-vitals", "airbnb", "plugin:react/jsx-runtime"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "mjs": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off"
+  }
+}
