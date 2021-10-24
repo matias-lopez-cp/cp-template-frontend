@@ -1,0 +1,20 @@
+{
+    "welcome": "Bienvenido a",
+    "get-started": "Empieza por editar",
+    "documentation": {
+        "title": "Documentación",
+        "description": "Encuentre información detallada sobre las características y la API de Next.js."
+    },
+    "learn": {
+        "title": "Aprende",
+        "description": "Aprende sobre Next.js en un curso interactivo con cuestionarios!"
+    },
+    "examples": {
+        "title": "Ejemplos",
+        "description": "Descubra y despliegue proyectos de ejemplo de Next.js."
+    },
+    "deploy": {
+        "title": "Despliegue",
+        "description": "Despliegue instantáneo de su sitio Next.js en una URL pública con Vercel."
+    }
+}

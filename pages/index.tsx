@@ -1,7 +1,17 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...await serverSideTranslations(locale, ['common']),
+  },
+});
 
 export default function Home() {
+  const { t } = useTranslation('common');
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
@@ -11,7 +21,7 @@ export default function Home() {
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <h1 className="text-6xl font-bold">
-          Welcome to
+          {t('welcome')}
           {' '}
           <a className="text-blue-600" href="https://nextjs.org">
             Next.js!
@@ -19,7 +29,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-3 text-2xl">
-          Get started by editing
+          {t('get-started')}
           {' '}
           <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
             pages/index.js
@@ -31,9 +41,13 @@ export default function Home() {
             href="https://nextjs.org/docs"
             className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
           >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
+            <h3 className="text-2xl font-bold">
+              {t('documentation.title')}
+              {' '}
+              &rarr;
+            </h3>
             <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
+              {t('documentation.description')}
             </p>
           </a>
 
@@ -41,9 +55,14 @@ export default function Home() {
             href="https://nextjs.org/learn"
             className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
           >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
+            <h3 className="text-2xl font-bold">
+              {t('learn.title')}
+              {' '}
+              &rarr;
+
+            </h3>
             <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
+              {t('learn.description')}
             </p>
           </a>
 
@@ -51,9 +70,13 @@ export default function Home() {
             href="https://github.com/vercel/next.js/tree/master/examples"
             className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
           >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
+            <h3 className="text-2xl font-bold">
+              {t('examples.title')}
+              {' '}
+              &rarr;
+            </h3>
             <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
+              {t('examples.description')}
             </p>
           </a>
 
@@ -61,9 +84,13 @@ export default function Home() {
             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
           >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
+            <h3 className="text-2xl font-bold">
+              {t('deploy.title')}
+              {' '}
+              &rarr;
+            </h3>
             <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              {t('deploy.description')}
             </p>
           </a>
         </div>
